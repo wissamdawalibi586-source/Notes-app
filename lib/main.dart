@@ -3,18 +3,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main(){
-  runApp(MyApp());
+  runApp((Notesapp()));
 }
-class MyApp extends StatelessWidget {
-  const MyApp ({super.key});
+class Notesapp extends StatelessWidget {
+  const Notesapp ({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false,
-      home: Scaffold(backgroundColor: Colors.white,
-
-      ),
-    );
-
+    return const Placeholder();
   }
 }
