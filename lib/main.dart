@@ -1,3 +1,4 @@
+import 'package:aaaa/Floders%20for%20notes%20app/views/notes_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,12 @@ class Notesapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(brightness: Brightness.dark ,
+      scaffoldBackgroundColor: Color(0xff2D2D2D)),
+      home: const NotesView(),
+    );
 
   }
 }
