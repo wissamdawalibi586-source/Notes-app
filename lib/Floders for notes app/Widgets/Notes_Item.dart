@@ -19,7 +19,7 @@ class NotesItem extends StatelessWidget {
           ListTile(
             title: Text(
               'Flutter tips',
-              style: TextStyle(color: Colors.black, fontSize: 26),
+              style: TextStyle(color: Colors.red, fontSize: 26),
             ),
 
             subtitle: Padding(
