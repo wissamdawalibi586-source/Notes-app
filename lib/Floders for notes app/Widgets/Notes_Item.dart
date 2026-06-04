@@ -7,7 +7,7 @@ class NotesItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(padding: const EdgeInsets.only(top: 15,left: 8),
-      height: 180,
+      height: 190,
       decoration: BoxDecoration(
         color: Color(0xffFFCD7A),
         borderRadius: BorderRadius.circular(20),
