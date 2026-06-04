@@ -14,7 +14,8 @@ class NotesView extends StatelessWidget {
         backgroundColor: Colors.cyanAccent,
         child: Icon(Icons.add,color: Colors.black,),
         onPressed: () {
-        showModalBottomSheet(context: context, builder:(context) {
+        showModalBottomSheet(
+            context: context, builder:(context) {
           return AddNotesbuttonsheet();
         });
         },
