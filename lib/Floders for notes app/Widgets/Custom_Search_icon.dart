@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomSreachIcon extends StatelessWidget {
-  const CustomSreachIcon({super.key});
-
+  const CustomSreachIcon({super.key,  required this.icon});
+final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,7 +14,7 @@ class CustomSreachIcon extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
 
-      child: Icon(Icons.search_rounded, size: 23),
+      child: Icon(icon, size: 23),
     );
   }
 }

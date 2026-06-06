@@ -1,5 +1,4 @@
 import 'package:aaaa/Floders%20for%20notes%20app/Widgets/Custom_app_bar.dart';
-import 'package:aaaa/Floders%20for%20notes%20app/Widgets/Notes_Item.dart';
 import 'package:aaaa/Floders%20for%20notes%20app/Widgets/Notes_List_view.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +10,10 @@ class NotesviewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
       child: Column(
-        children: [Customappbar(), Expanded(flex: 1, child: NotesListview())],
+        children: [
+          Customappbar(text: "Notes", icon: Icons.search),
+          Expanded(flex: 1, child: NotesListview()),
+        ],
       ),
     );
   }
