@@ -16,7 +16,7 @@ addnote(NoteModel note) async {
    AddnotesFailure(e.toString());
  }
 
-}
+}}
 
 
 
