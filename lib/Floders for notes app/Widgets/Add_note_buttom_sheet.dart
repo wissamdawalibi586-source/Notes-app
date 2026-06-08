@@ -17,25 +17,25 @@ class _AddNotesbuttonsheetState extends State<AddNotesbuttonsheet> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [BlocProvider(create: (context) => AddNotesCubit())],
-      child: Container(
-        height: 400,
-        child: BlocConsumer<AddNotesCubit, AddNotesState>(
-          builder: (context, state) {
-            return AbsorbPointer(
-              absorbing: state is AddnotesLoding ? true : false,
+      child: BlocConsumer<AddNotesCubit, AddNotesState>(
+        builder: (context, state) {
+          return AbsorbPointer(
+            absorbing: state is AddnotesLoding ? true : false,
 
-              child: SingleChildScrollView(child: Addnoteform()),
-            );
-          },
-          listener: (context, state) {
-            if (state is AddnotesSuccess) {
-              Navigator.pop(context);
-            }
-            if (state is AddnotesFailure) {
-              print('failed ${state.errMessage}');
-            }
-          },
-        ),
+            child: Padding(
+              padding:  EdgeInsets.only(bottom:MediaQuery.of(context).viewInsets.bottom),
+              child: const SingleChildScrollView(child: Addnoteform()),
+            ),
+          );
+        },
+        listener: (context, state) {
+          if (state is AddnotesSuccess) {
+            Navigator.pop(context);
+          }
+          if (state is AddnotesFailure) {
+            print('failed ${state.errMessage}');
+          }
+        },
       ),
     );
   }
