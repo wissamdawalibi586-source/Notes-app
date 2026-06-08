@@ -10,10 +10,12 @@ addnote(NoteModel note) async {
   emit(AddnotesLoding());
  try {
    var notesbox = Hive.box<NoteModel>(kNotesbox);
-   emit(AddnotesSuccess());
+
    await notesbox.add(note);
+   emit(AddnotesSuccess());
+
  }  catch (e) {
-   AddnotesFailure(e.toString());
+   emit(AddnotesFailure(e.toString()));
  }
 
 }}

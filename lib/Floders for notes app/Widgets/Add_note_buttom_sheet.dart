@@ -16,14 +16,15 @@ class AddNotesbuttonsheet extends StatefulWidget {
 class _AddNotesbuttonsheetState extends State<AddNotesbuttonsheet> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 400,
-      child: SingleChildScrollView(
+    return MultiBlocProvider(
+       providers: [BlocProvider(create: (context)=> AddNotesCubit())],
+      child: Container(
+        height: 400,
         child: BlocConsumer<AddNotesCubit, AddNotesState>(
           builder: (context, state) {
             return ModalProgressHUD(
               inAsyncCall: state is AddnotesLoding ? true : false,
-              child: Addnoteform(),
+              child: SingleChildScrollView(child: Addnoteform()),
             );
           },
           listener: (context, state) {
@@ -31,7 +32,7 @@ class _AddNotesbuttonsheetState extends State<AddNotesbuttonsheet> {
               Navigator.pop(context);
             }
             if (state is AddnotesFailure) {
-              print('failed ${state.errMessage}' );
+              print('failed ${state.errMessage}');
             }
           },
         ),
