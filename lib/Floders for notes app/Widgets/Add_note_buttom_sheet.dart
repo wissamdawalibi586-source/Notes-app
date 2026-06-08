@@ -2,7 +2,6 @@ import 'package:aaaa/Floders%20for%20notes%20app/cubits_Add_note_cubit/Add_notes
 import 'package:aaaa/Floders%20for%20notes%20app/cubits_Add_note_cubit/Add_notes_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import 'Add_note_form.dart';
 
@@ -17,13 +16,14 @@ class _AddNotesbuttonsheetState extends State<AddNotesbuttonsheet> {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-       providers: [BlocProvider(create: (context)=> AddNotesCubit())],
+      providers: [BlocProvider(create: (context) => AddNotesCubit())],
       child: Container(
         height: 400,
         child: BlocConsumer<AddNotesCubit, AddNotesState>(
           builder: (context, state) {
-            return ModalProgressHUD(
-              inAsyncCall: state is AddnotesLoding ? true : false,
+            return AbsorbPointer(
+              absorbing: state is AddnotesLoding ? true : false,
+
               child: SingleChildScrollView(child: Addnoteform()),
             );
           },
