@@ -1,8 +1,8 @@
-import 'package:aaaa/Floders%20for%20notes%20app/cubits_Add_note_cubit/Add_notes_cubit.dart';
-import 'package:aaaa/Floders%20for%20notes%20app/cubits_Add_note_cubit/Add_notes_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../cubits_Add_note_cubit/Add_notes_cubit.dart';
+import '../cubits_Add_note_cubit/Add_notes_state.dart';
 import 'Add_note_form.dart';
 
 class AddNotesbuttonsheet extends StatefulWidget {
@@ -23,7 +23,9 @@ class _AddNotesbuttonsheetState extends State<AddNotesbuttonsheet> {
             absorbing: state is AddnotesLoding ? true : false,
 
             child: Padding(
-              padding:  EdgeInsets.only(bottom:MediaQuery.of(context).viewInsets.bottom),
+              padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).viewInsets.bottom,
+              ),
               child: const SingleChildScrollView(child: Addnoteform()),
             ),
           );

@@ -1,11 +1,12 @@
-import 'package:aaaa/Floders%20for%20notes%20app/Models/note_model.dart';
-import 'package:aaaa/Floders%20for%20notes%20app/Widgets/Constants.dart';
-import 'package:aaaa/Floders%20for%20notes%20app/Widgets/Simple_bloc_observer.dart';
-import 'package:aaaa/Floders%20for%20notes%20app/cubits_Add_note_cubit/Add_notes_cubit.dart';
-import 'package:aaaa/Floders%20for%20notes%20app/views/notes_view.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+
+import 'Floders_for_notes_app/Models/note_model.dart';
+import 'Floders_for_notes_app/Widgets/Constants.dart';
+import 'Floders_for_notes_app/Widgets/Simple_bloc_observer.dart';
+import 'Floders_for_notes_app/views/notes_view.dart';
 
 void main() async {
   BlocObserver() = SimpleBlocObserver() ;
