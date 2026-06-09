@@ -8,7 +8,8 @@ import '../views/Edit_Note_view.dart';
 import 'Notes_Item.dart';
 
 class NotesListview extends StatelessWidget {
-  const NotesListview({super.key, });
+  const NotesListview({super.key,  });
+
 
   @override
   Widget build(BuildContext context) {
@@ -24,20 +25,8 @@ class NotesListview extends StatelessWidget {
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 4),
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return EditNoteView();
-                        },
-                      ),
-                    );
-                  },
-                  child: NotesItem(
-                    note :notes[index]
-                  ),
+                child: NotesItem(
+                  note :notes[index]
                 ),
               );
             },

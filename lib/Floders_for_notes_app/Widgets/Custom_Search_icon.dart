@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomSreachIcon extends StatelessWidget {
-  const CustomSreachIcon({super.key,  required this.icon});
+  const CustomSreachIcon({super.key,  required this.icon, this.onPressed});
 final IconData icon;
+final void Function()? onPressed;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,7 +16,7 @@ final IconData icon;
         borderRadius: BorderRadius.circular(15),
       ),
 
-      child: Icon(icon, size: 23),
+      child: IconButton(onPressed: onPressed, icon: Icon(icon,size: 27,))
     );
   }
 }
