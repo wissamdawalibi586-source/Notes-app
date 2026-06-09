@@ -8,17 +8,18 @@ import '../views/Edit_Note_view.dart';
 import 'Notes_Item.dart';
 
 class NotesListview extends StatelessWidget {
-  const NotesListview({super.key});
+  const NotesListview({super.key, });
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<NotesCubit,NotesState>(
+    return BlocBuilder<NotesCubit, NotesState>(
       builder: (BuildContext context, state) {
-        List<NoteModel> notes = BlocProvider.of<NotesCubit>(context).notes?? [];
+        List<NoteModel> notes =
+            BlocProvider.of<NotesCubit>(context).notes!;
         return Padding(
           padding: const EdgeInsets.only(top: 8, bottom: 8),
           child: ListView.builder(
-            itemCount: notes.length ,
+            itemCount: notes.length,
             padding: EdgeInsets.zero,
             itemBuilder: (context, index) {
               return Padding(
@@ -34,14 +35,15 @@ class NotesListview extends StatelessWidget {
                       ),
                     );
                   },
-                  child: NotesItem(),
+                  child: NotesItem(
+                    note :notes[index]
+                  ),
                 ),
               );
             },
           ),
         );
       },
-
     );
   }
 }

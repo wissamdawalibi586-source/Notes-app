@@ -52,7 +52,8 @@ class _AddnoteformState extends State<Addnoteform> {
                     var noteModel = NoteModel(
                       title: title!,
                       subTitle: subtitle!,
-                      date: DateTime.now().toString(),
+                      date: "${DateTime.now().day}/${DateTime.now().month}/${DateTime.now().year}",
+
                       Color: kpriamrycolor.value,
                     );
                     BlocProvider.of<AddNotesCubit>(context).addnote(noteModel);
