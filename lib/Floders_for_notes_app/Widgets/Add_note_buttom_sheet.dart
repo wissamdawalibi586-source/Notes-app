@@ -1,3 +1,4 @@
+import 'package:aaaa/Floders_for_notes_app/cubits_notes_cubit/notes_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -32,10 +33,11 @@ class _AddNotesbuttonsheetState extends State<AddNotesbuttonsheet> {
         },
         listener: (context, state) {
           if (state is AddnotesSuccess) {
+            BlocProvider.of<NotesCubit>(context).fetchAllNotes();
             Navigator.pop(context);
           }
           if (state is AddnotesFailure) {
-            print('failed ${state.errMessage}');
+
           }
         },
       ),
