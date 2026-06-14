@@ -43,7 +43,7 @@ class _AddnoteformState extends State<Addnoteform> {
             labeltext: "Content",
             maxlines: 4,
           ),
-          const SizedBox(height: 60),
+          const SizedBox(height: 30),
           ColorListView(),
           SizedBox(height: 30),
           BlocBuilder<AddNotesCubit, AddNotesState>(
