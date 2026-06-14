@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'Custom_app_bar.dart';
 import 'Custom_text_field.dart';
+import 'Edit_Color_List_view.dart';
 
 class EditNotesViewBody extends StatefulWidget {
   const EditNotesViewBody({super.key, required this.note});
@@ -16,35 +17,45 @@ class EditNotesViewBody extends StatefulWidget {
 }
 
 class _EditNotesViewBodyState extends State<EditNotesViewBody> {
-   String? title,content;
+  String? title, content;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
       child: Column(
         children: [
-          Customappbar(onPressed: () {
-            widget.note.title=title ?? widget.note.title;
-            widget.note.subTitle= content ?? widget.note.subTitle ;
-            widget.note.save();
-            BlocProvider.of<NotesCubit>(context).fetchAllNotes();
-            Navigator.pop(context);
-
-          },
-              text: "Edit Note", icon: Icons.check),
+          Customappbar(
+            onPressed: () {
+              widget.note.title = title ?? widget.note.title;
+              widget.note.subTitle = content ?? widget.note.subTitle;
+              widget.note.save();
+              BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+              Navigator.pop(context);
+            },
+            text: "Edit Note",
+            icon: Icons.check,
+          ),
           SizedBox(height: 20),
-          CustomTextField(onchanged: (value){
-            title = value;
-          },
+          CustomTextField(
+            onchanged: (value) {
+              title = value;
+            },
 
-              labeltext:"title", maxlines: 1),
-          CustomTextField(onchanged: (value){
-            content =value;
-          },
-              labeltext: "Content", maxlines: 4) ,
+            labeltext: "title",
+            maxlines: 1,
+          ),
+          CustomTextField(
+            onchanged: (value) {
+              content = value;
+            },
+            labeltext: "Content",
+            maxlines: 4,
+          ),
+          SizedBox(height: 20),
+          EditColorListview(note: widget.note),
         ],
       ),
     );
-    ;
   }
 }
